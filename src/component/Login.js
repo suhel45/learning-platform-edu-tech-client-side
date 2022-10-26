@@ -5,6 +5,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Form from "react-bootstrap/Form";
 import { AuthContext } from "./context/UserContext";
 import { FaGoogle,FaGithub } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Login = () => {
     const {signIn,googleSignIn} = useContext(AuthContext);
@@ -59,7 +60,11 @@ const Login = () => {
         <Button variant="primary" type="submit">
           Login
         </Button>
-      </Form>
+       </Form>
+       <div className="text-center">
+       <span ><small >Do not have an account please <Link to='/register'>Register</Link> </small></
+span>
+       </div>
     </div>
   );
 };
