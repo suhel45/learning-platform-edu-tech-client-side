@@ -30,7 +30,7 @@ const Header = () => {
             <Nav.Link className="text-white" as={Link} to="/toggle">Dark/Light</Nav.Link>
             <Nav.Link className="text-white" as={Link} to={"/login"}>Login</Nav.Link>
             <Nav.Link className="text-white" as={Link} to="/register">Register</Nav.Link>
-            {user?.email && user?.emailVerified && <p className="text-white mt-2">{user.email}</p>}
+            {user?.email && <p className="text-white mt-2">{user.email}</p>}
           </Nav>
         
       </Navbar>

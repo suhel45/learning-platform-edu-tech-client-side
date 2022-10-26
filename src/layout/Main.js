@@ -11,10 +11,10 @@ const Main = () => {
     <div>
       <Header></Header>
       <Row>
-        <Col lg='3' md='5'>
+        <Col lg='2' md='5'>
           <h4>leftside</h4>
         </Col>
-        <Col lg='9' md='7'>
+        <Col lg='5' md='7'>
         <Outlet></Outlet>
         </Col>
       </Row>
