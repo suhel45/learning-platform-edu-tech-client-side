@@ -7,7 +7,19 @@ import { AuthContext } from "./context/UserContext";
 import { FaGoogle,FaGithub } from "react-icons/fa";
 
 const Login = () => {
-    const {signIn} = useContext(AuthContext);
+    const {signIn,googleSignIn} = useContext(AuthContext);
+
+
+    const handleGoogle = ()=>{
+        googleSignIn()
+        .then(result=>{
+          const user = result.user;
+          console.log(user)
+        })
+        .catch(e=>{
+          console.log(e)
+        })
+    }
     const handleLoginSubmit = (event)=>{
         event.preventDefault();
         const form = event.target;
@@ -27,7 +39,7 @@ const Login = () => {
     <div className="shadow p-3 mb-5 bg-white rounded w-50 mt-5 text-dark">
         <h4 className="text-center">Please Login!</h4>
         <ListGroup className="container w-50 mt-3">
-      <ListGroup.Item className=" text-primary mb-3" action ><FaGoogle></FaGoogle> Continue With Google</ListGroup.Item>
+      <ListGroup.Item className=" text-primary mb-3" action onClick={handleGoogle} ><FaGoogle></FaGoogle> Continue With Google</ListGroup.Item>
       <ListGroup.Item className="text-primary mb-3" action ><FaGithub></FaGithub> Continue With Github</ListGroup.Item>
     </ListGroup>
     <p className="text-center">---------or----------</p>

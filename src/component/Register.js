@@ -3,12 +3,12 @@
 import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { IconName } from "react-icons/hi";
 import { AuthContext } from "./context/UserContext";
 
 const Register = () => {
 
   const {createUser} = useContext(AuthContext)
+
 
   const handleSubmit = (event)=>{
     event.preventDefault();
