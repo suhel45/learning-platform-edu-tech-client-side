@@ -24,12 +24,12 @@ const router = createBrowserRouter([
       },
       {
         path:'/category/:id',
-        loader:({params})=>fetch(`http://localhost:5000/category/${params.id}`),
+        loader:({params})=>fetch(`https://assignment10-server-side-swart.vercel.app/category/${params.id}`),
         element:<Courses></Courses>
       },
       {
         path:'/category/checkout/:id',
-        loader:({params})=>fetch(`http://localhost:5000/category/${params.id}`),
+        loader:({params})=>fetch(`https://assignment10-server-side-swart.vercel.app/category/${params.id}`),
         element:<PrivateRoute><CheckOut></CheckOut></PrivateRoute>
       },
     ]

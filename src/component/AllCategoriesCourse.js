@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const AllCategoriesCourse = () => {
   const [categoris, setCategoris] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/categoris")
+    fetch("https://assignment10-server-side-swart.vercel.app/categoris")
       .then((res) => res.json())
       .then((data) => setCategoris(data));
   }, []);
