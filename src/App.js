@@ -25,11 +25,12 @@ const router = createBrowserRouter([
       {
         path:'/category/:id',
         loader:({params})=>fetch(`http://localhost:5000/category/${params.id}`),
-        element:<PrivateRoute><Courses></Courses></PrivateRoute>
+        element:<Courses></Courses>
       },
       {
         path:'/category/checkout/:id',
-        element:<CheckOut></CheckOut>
+        loader:({params})=>fetch(`http://localhost:5000/category/${params.id}`),
+        element:<PrivateRoute><CheckOut></CheckOut></PrivateRoute>
       },
     ]
   }

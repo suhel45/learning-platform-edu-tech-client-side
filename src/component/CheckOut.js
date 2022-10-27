@@ -1,9 +1,18 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import CheckoutDetails from './CheckoutDetails';
 
 const CheckOut = () => {
+    const data = useLoaderData();
+    console.log(data)
     return (
         <div>
-            <h1>this is checkout</h1>
+            {
+                data.map(singleCourse=><CheckoutDetails
+                key={singleCourse.id}
+                singleCourse={singleCourse}
+                ></CheckoutDetails>)
+            }
         </div>
     );
 };
