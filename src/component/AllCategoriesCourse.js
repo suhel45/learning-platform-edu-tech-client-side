@@ -1,11 +1,27 @@
-import React from 'react';
+/** @format */
+
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const AllCategoriesCourse = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  const [categoris, setCategoris] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/categoris")
+      .then((res) => res.json())
+      .then((data) => setCategoris(data));
+  }, []);
+  return (
+    <div className="container ms-5 mt-5">
+      <h2>All Course categories</h2>
+      <div>
+        {categoris.map((category) => (
+          <p key={category.id}>
+            <Link to={`/category/${category.id}`}>{category.name}</Link>
+          </p>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default AllCategoriesCourse;

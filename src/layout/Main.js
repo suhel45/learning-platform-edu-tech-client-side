@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Outlet } from "react-router-dom";
 import Header from "../component/Header";
+import AllCategoriesCourse from "../component/AllCategoriesCourse";
 
 const Main = () => {
   return (
@@ -12,9 +13,9 @@ const Main = () => {
       <Header></Header>
       <Row>
         <Col lg='2' md='5'>
-          <h4>leftside</h4>
+          <AllCategoriesCourse></AllCategoriesCourse>
         </Col>
-        <Col lg='5' md='7'>
+        <Col lg='10' md='7'>
         <Outlet></Outlet>
         </Col>
       </Row>

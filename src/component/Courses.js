@@ -5,7 +5,7 @@ import CourseDetails from './CourseDetails';
 const Courses = () => {
     const data = useLoaderData();
     return (
-        <div>
+        <div className='row'>
             {
                 data.map(course=><CourseDetails
                 key={course._id}
