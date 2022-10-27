@@ -5,17 +5,21 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Form from "react-bootstrap/Form";
 import { AuthContext } from "./context/UserContext";
 import { FaGoogle,FaGithub } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
     const {signIn,googleSignIn} = useContext(AuthContext);
 
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/'
 
     const handleGoogle = ()=>{
         googleSignIn()
         .then(result=>{
           const user = result.user;
           console.log(user)
+          navigate(from,{replace:true})
         })
         .catch(e=>{
           console.log(e)
@@ -31,6 +35,8 @@ const Login = () => {
             const user = result.user;
             form.reset();
             console.log(user)
+            navigate(from,{replace:true})
+
         })
         .catch(e=>{
             console.log(e);
