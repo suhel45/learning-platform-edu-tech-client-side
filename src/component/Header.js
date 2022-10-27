@@ -60,6 +60,7 @@ const Header = () => {
           <Nav.Link as={Link} className="me-5 " to="/profile">
             {user?.photoURL ? (
               <Image
+                title={user?.displayName}
                 style={{ height:"40px" }}
                 roundedCircle
                 src={user?.photoURL}></Image>
